@@ -1,0 +1,21 @@
+{
+  "name": "Chartpie — Private. Direct. Connected.",
+  "short_name": "Chartpie",
+  "description": "Zero-Knowledge End-to-End Encrypted P2P Messenger",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFF9EF",
+  "theme_color": "#E7A23B",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap');
+
+:root {
+  --cream-bg: #FFF9EF;
+  --ivory-card: #FFFDF8;
+  --saffron-main: #E7A23B;
+  --saffron-light: #F3C978;
+  --peach-muted: #F3C7A8;
+  --terracotta: #C98262;
+  --lavender-soft: #D8CBE8;
+  --charcoal-warm: #3B3530;
+  --text-muted: #81766C;
+  --border-warm: #E9DED1;
+
+  --presence-online: #78A878;
+  --presence-away: #D5A85C;
+  --presence-offline: #B9B0A8;
+
+  --grad-saffron: linear-gradient(135deg, #F3C978 0%, #E7A23B 100%);
+  --grad-peach: linear-gradient(135deg, #F3C7A8 0%, #E7A23B 100%);
+  --grad-lavender: linear-gradient(135deg, #D8CBE8 0%, #F3C7A8 100%);
+  --grad-cream: linear-gradient(180deg, #FFFDF8 0%, #FFF9EF 100%);
+
+  --shadow-sm: 0 2px 8px rgba(59, 53, 48, 0.06);
+  --shadow-md: 0 8px 24px rgba(59, 53, 48, 0.08);
+  --shadow-lg: 0 16px 36px rgba(59, 53, 48, 0.12);
+  --shadow-fab: 0 8px 24px rgba(231, 162, 59, 0.35);
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--cream-bg);
+  color: var(--charcoal-warm);
+  overflow-x: hidden;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Warm Ambient Background Glows */
+.auren-bg-ambient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.auren-bg-ambient::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, rgba(243, 201, 120, 0.25) 0%, rgba(255,249,239,0) 70%);
+  filter: blur(80px);
+}
+
+.auren-bg-ambient::after {
+  content: '';
+  position: absolute;
+  bottom: -10%;
+  right: -10%;
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, rgba(216, 203, 232, 0.25) 0%, rgba(255,249,239,0) 70%);
+  filter: blur(80px);
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(233, 162, 59, 0.2);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(233, 162, 59, 0.4);
+}
+
+/* Soft Cards */
+.warm-card {
+  background: var(--ivory-card);
+  border: 1px solid var(--border-warm);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.warm-card-interactive {
+  transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.warm-card-interactive:hover {
+  border-color: var(--saffron-main);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+/* Inputs & Buttons */
+.auren-input {
+  width: 100%;
+  padding: 12px 16px;
+  background: #FFFDF8;
+  border: 1px solid var(--border-warm);
+  border-radius: var(--radius-md);
+  color: var(--charcoal-warm);
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+.auren-input:focus {
+  border-color: var(--saffron-main);
+  box-shadow: 0 0 0 3px rgba(231, 162, 59, 0.2);
+}
+
+.auren-btn-primary {
+  background: var(--grad-saffron);
+  color: var(--charcoal-warm);
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 12px 20px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(231, 162, 59, 0.28);
+}
+.auren-btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(231, 162, 59, 0.4);
+  filter: brightness(1.05);
+}
+.auren-btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Floating Action Button (FAB) */
+.auren-fab {
+  position: absolute;
+  bottom: 24px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--grad-saffron);
+  color: var(--charcoal-warm);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--shadow-fab);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 40;
+}
+.auren-fab:hover {
+  transform: scale(1.08) rotate(90deg);
+  box-shadow: 0 12px 28px rgba(231, 162, 59, 0.5);
+}
+.auren-fab:active {
+  transform: scale(0.96);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s ease-out forwards;
+}

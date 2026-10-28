@@ -1,0 +1,29 @@
+name: p2p_messenger
+description: "A WhatsApp-like Peer-to-Peer Android Messenger demonstrating WebRTC, NAT Traversal, E2EE, and Computer Networks concepts."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_riverpod: ^2.5.1
+  cupertino_icons: ^1.0.8
+  sqflite: ^2.3.0
+  path: ^1.9.0
+  cryptography: ^2.7.0
+  crypto: ^3.0.3
+  flutter_secure_storage: ^9.0.0
+  qr_flutter: ^4.1.0
+  flutter_webrtc: ^0.9.48
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  sqflite_common_ffi: ^2.3.0
+
+flutter:
+  uses-material-design: true
